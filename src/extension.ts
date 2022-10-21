@@ -1,4 +1,4 @@
-import { MoosyncExtensionTemplate, Playlist, PlayerState, Song, SongQueue } from '@moosync/moosync-types'
+import { MoosyncExtensionTemplate, Playlist, PlayerState, Song, SongQueue, Artists } from '@moosync/moosync-types'
 import { resolve } from 'path'
 
 const sampleSong: Song = {
@@ -17,6 +17,12 @@ const samplePlaylist: Playlist = {
   playlist_song_count: 69,
   playlist_coverPath: 'https://avatars.githubusercontent.com/u/91860733?s=200&v=4',
   icon: resolve(__dirname, '../assets/icon.svg')
+}
+
+const sampleArtist: Artists = {
+  artist_id: 'random generated ID',
+  artist_name: 'My Artist',
+  artist_coverPath: 'https://avatars.githubusercontent.com/u/91860733?s=200&v=4'
 }
 export class MyExtension implements MoosyncExtensionTemplate {
   private interval: ReturnType<typeof setInterval> | undefined
@@ -88,10 +94,12 @@ export class MyExtension implements MoosyncExtensionTemplate {
       return 'Lorem Ipsum'
     })
 
-    api.on('requestSearchResult', async (searchTerm) => {
+    api.on('requestedSearchResult', async (term) => {
       return {
-        providerName: 'Example provider',
-        songs: [sampleSong]
+        songs: [sampleSong],
+        playlists: [samplePlaylist],
+        artists: [sampleArtist],
+        albums: []
       }
     })
 
