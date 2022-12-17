@@ -11,7 +11,7 @@ export default class MyExtensionData implements ExtensionData {
 }
 
 class MyExtensionFactory implements ExtensionFactory {
-  async registerPreferences(): Promise<ExtensionPreferenceGroup[]> {
+  async registerUserPreferences(): Promise<ExtensionPreferenceGroup[]> {
     return [
       {
         type: 'CheckboxGroup',
