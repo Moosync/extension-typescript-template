@@ -46,7 +46,7 @@ The extension system in Moosync makes use of events to functions.
 
 ### Events
 
-**Documentation for events can be found [here](https://moosync.cf/docs/extensions_api/interfaces/index.MoosyncExtensionTemplate.html)**
+**Documentation for events can be found [here](https://moosync.app/docs/interfaces/MoosyncExtensionTemplate.html)**
 
 The basic events are:
 
@@ -61,7 +61,7 @@ Example for implementation of each event can be found [here](https://github.com/
 
 You may also make use of the on demand API to fetch data from Moosync.
 
-Documentation for the API can be found [here](https://moosync.cf/docs/extensions_api/interfaces/index.extensionAPI.html)
+Documentation for the API can be found [here](https://moosync.app/docs/interfaces/extensionAPI.html)
 
 ## Creating the extension
 
